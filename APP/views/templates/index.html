@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+    {{ super() }}
+    <header class="header_top">
+        <div class="header_logo"></div>
+        <ul class="header_ul">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">TIMELINE</a></li>
+            <li><a href="{{ url_for('uploads.upload_page') }}">UPLOAD</a></li>
+            <li><a href="{{ url_for('login.login_page') }}">SIGN IN</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li>
+                <div class="group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        PAGES <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="#">Upload</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <!--<aside></aside>-->
+    <!--  home  -->
+    <section class="home">
+        <div class="slideshow-image"
+             style="background-image: url('{{ url_for('static',filename='img/slider1.jpg') }}')"></div>
+        <div class="slideshow-image"
+             style="background-image: url('{{ url_for('static',filename='img/slider2.jpg') }}')"></div>
+        <div class="slideshow-image"
+             style="background-image: url('{{ url_for('static',filename='img/slider3.jpg') }}')"></div>
+        <div class="banner_introduce">
+            <h1 class="banner_h1">小世界</h1>
+            <p class="banner_p">小世界的简要介绍小世界的简要介绍小世界的简要介绍小世界的简要介绍小世界的简要介绍小世界的简要介绍</p>
+            <a class="banner_but" href="#">DISCRIPTION</a>
+        </div>
+    </section>
+    <!--  about  -->
+    {#    <section class="about">#}
+    {#        <h1>后台未接入</h1>#}
+    {#        <h6>后台未接入后台未接入</h6>#}
+    {#        <img class="about_img" src="{{ url_for('static',filename='img/about-img.jpg') }}"/>#}
+    {#        <div class="about_article"></div>#}
+    {##}
+    {#    </section>#}
+
+    <footer class="footer_area">
+        <a href="http://www.miitbeian.gov.cn/">京ICP备18051945号-1</a>
+        <img src="{{ url_for('static',filename='img/elements/京ICP备18051945号-1.png') }}" height="20" width="20"/>
+    </footer>
+{% endblock %}
+{% block ext_css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}">
+{% endblock %}
+{% block ext_js %}
+    {{ super() }}
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+{% endblock %}

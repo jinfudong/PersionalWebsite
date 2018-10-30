@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="input-group">
+        <input name="photo" type="file" class="form-control" aria-label="...">
+        <div class="input-group-btn">
+            <!-- Buttons -->
+            <button type="button" class="btn btn-default">Browse</button>
+            <button type="button" class="btn btn-default" id="upload_file">Upload</button>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+{% block ext_js %}
+    <script src="{{ url_for('static',filename='js/upload.js') }}"></script>
+{% endblock %}
